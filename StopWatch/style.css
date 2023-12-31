@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #282c34; /* Dark background color */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.stopwatch {
+    background-color: #373d49; /* Darker background color */
+    padding: 20px 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out;
+    animation: colorCycle 5s infinite; /* Color cycling animation */
+}
+
+@keyframes colorCycle {
+    0% {
+        background-color: #373d49;
+    }
+    25% {
+        background-color: #574d68;
+    }
+    50% {
+        background-color: #5e6b7a;
+    }
+    75% {
+        background-color: #4e7d74;
+    }
+    100% {
+        background-color: #373d49;
+    }
+}
+
+.timerDisplay {
+    font-size: 50px;
+    font-weight: 600;
+    color: #61dafb; /* Sky blue text color */
+    animation: pulse 1s infinite; /* Apply the pulsing animation */
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    margin-inline: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.btn:active {
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly darker on click */
+}
+
+.stopwatch:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+#startBtn:hover {
+    transform: rotate(20deg); /* Rotate on hover */
+}
+
+#resetBtn:hover {
+    animation: float 0.5s ease-in-out infinite; /* Floating animation on hover */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
